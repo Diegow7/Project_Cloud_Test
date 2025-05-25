@@ -26,13 +26,11 @@ if len(collection.get()) == 0:
 # OpenAI client
 cliente = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-@main_bp.route('/')
-def index():
-    return render_template('index.html')
 
 @main_bp.route('/query', methods=['POST'])
 def query_system():
     try:
+ 
         user_query = request.json.get('query')
         if not user_query:
             return jsonify({"error": "No se proporcionó ninguna consulta."}), 400
