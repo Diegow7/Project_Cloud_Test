@@ -1,0 +1,9 @@
+flask
+pandas
+sentence-transformers
+chromadb
+openai
+python-dotenv
+flask_CORS
+gunicorn
+gevent
