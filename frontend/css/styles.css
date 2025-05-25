@@ -1,0 +1,143 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --primary-color: #f5b200;
+  --secondary-color: #0e4b89;
+  --bubble-bg: #f1f1f1;
+}
+
+body.dark-mode {
+  --bg-color: #0e4b89;
+  --text-color: #ffffff;
+  --bubble-bg: #1b3a61;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--bg-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.chat-box {
+  margin-top: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  word-wrap: break-word;
+}
+
+.message.user .icon {
+  background-color: var(--primary-color);
+}
+
+.message.bot .icon {
+  background-color: var(--secondary-color);
+}
+
+.icon {
+  min-width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.message-content {
+  background: var(--bubble-bg);
+  color: var(--text-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  padding: 10px 15px;
+  border-radius: 5px;
+  max-width: 80%;
+  word-break: break-word;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+form {
+  display: flex;
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+.toggle-theme {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .toggle-theme {
+    top: 10px;
+    right: 10px;
+  }
+  form {
+    flex-direction: column;
+  }
+  button {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .container {
+    padding: 10px;
+  }
+}
