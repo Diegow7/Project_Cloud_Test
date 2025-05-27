@@ -24,7 +24,9 @@ document.getElementById('query-form').addEventListener('submit', async (e) => {
   `;
   chatBox.innerHTML += userMessage;
 
+  //Redireccionando al backend de AWS, evitando el local host
   const response = await fetch('http://127.0.0.1:5000/query', {
+  //const response = await fetch('http://98.81.245.169:5000/query', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ query })
